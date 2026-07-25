@@ -361,6 +361,12 @@
       <div class="row"><span class="lg" data-t="ok" id="lgOk"></span><div><b>Conventional is fine</b><span>Low residue — save your money, buy the regular one.</span></div></div>
     </div>
 
+    <h3>Why "thick skin" doesn't always mean safe</h3>
+    <p>Two things decide how much spray actually reaches you — not skin thickness on its own:</p>
+    <p><b>1 · Do you eat the skin?</b> An orange or banana has a thick peel you throw away, so most of the residue goes in the bin with it. A nectarine, apple or grape has a thin skin you eat whole — there's nowhere for it to go.</p>
+    <p><b>2 · Is the spray on the outside, or inside?</b> Some pesticides are <b>"systemic"</b> — the plant draws them up into the flesh, so washing or peeling can't remove them. Others just sit on the surface and rinse off. Soft, heavily-sprayed produce — berries, stone fruit, leafy greens — tends to hold both.</p>
+    <p class="fine">So a fruit can have "skin" and still be high-residue. What matters is whether that skin is eaten, and whether the chemical sits on it or inside it.</p>
+
     <h3>In Australia, look for the logo — not just the word</h3>
     <p>"Organic" isn't legally protected for products sold in Australia unless they're <b>certified</b>. To know it's the real thing, look for:</p>
     <div class="tags"><span>ACO "Bud" logo</span><span>NASAA Organic</span><span>Coles Organic</span><span>Woolworths Macro Organic</span></div>
@@ -391,102 +397,126 @@
 
   // ---- Data ----
   var DATA = [
-    // FRUIT — berries & grapes
-    {n:"Strawberries", c:"Fruit", t:"org", w:"Near the top of EWG's list — soft, no peel, samples carry many residues.", a:"Frozen certified-organic berries are a cheaper way to buy organic here."},
-    {n:"Blueberries", c:"Fruit", t:"org", w:"On the Dirty Dozen — eaten whole and skin-on, multiple residues common."},
-    {n:"Blackberries", c:"Fruit", t:"org", w:"A newer Dirty Dozen entrant — delicate and skin-on.", k:"berries"},
-    {n:"Raspberries", c:"Fruit", t:"mod", w:"Mid-tier, but a delicate skin-on berry — organic is a fair call.", k:"berries"},
-    {n:"Grapes", c:"Fruit", t:"org", w:"Dirty Dozen — thin-skinned, sprayed often, residues sit on the skin you eat."},
-    // FRUIT — stone & pome
-    {n:"Peaches", c:"Fruit", t:"org", w:"Dirty Dozen — soft fuzzy skin holds residues.", k:"stone fruit"},
-    {n:"Nectarines", c:"Fruit", t:"org", w:"Dirty Dozen — eaten skin-on with high residue rates.", k:"stone fruit"},
-    {n:"Cherries", c:"Fruit", t:"org", w:"Dirty Dozen — skin-on stone fruit, several residues common.", k:"stone fruit"},
-    {n:"Apricots", c:"Fruit", t:"mod", w:"Not separately ranked, but treat like peaches — skin-on stone fruit.", k:"stone fruit"},
-    {n:"Plums", c:"Fruit", t:"mod", w:"Mid-tier stone fruit, eaten skin-on. Rinse well or choose organic.", k:"stone fruit prunes"},
-    {n:"Apples", c:"Fruit", t:"org", w:"Dirty Dozen — often treated after harvest; residues sit on the skin."},
-    {n:"Pears", c:"Fruit", t:"org", w:"Dirty Dozen — most samples carry multiple residues."},
-    // FRUIT — tropical & melon
-    {n:"Bananas", c:"Fruit", t:"ok", w:"Clean Fifteen — the thick peel you throw away protects the fruit.", a:"Spend your organic budget on skin-on produce instead."},
-    {n:"Avocado", c:"Fruit", t:"ok", w:"Among the very cleanest produce there is — the thick skin you never eat protects the flesh.", k:"avocados avo"},
-    {n:"Pineapple", c:"Fruit", t:"ok", w:"The single cleanest item EWG tests — tough skin, minimal residue."},
-    {n:"Mango", c:"Fruit", t:"ok", w:"Clean Fifteen — thick skin is peeled away."},
-    {n:"Papaya", c:"Fruit", t:"ok", w:"Clean Fifteen — low residues; peel removed. (Some is GM — a separate issue.)", k:"pawpaw"},
-    {n:"Kiwifruit", c:"Fruit", t:"ok", w:"Clean Fifteen — furry skin usually peeled; low residues.", k:"kiwi"},
-    {n:"Watermelon", c:"Fruit", t:"ok", w:"Clean Fifteen — thick rind; very low residue on the flesh."},
-    {n:"Rockmelon", c:"Fruit", t:"mod", w:"Mid-tier. Rind is discarded, but wash before cutting so the knife doesn't drag residue in.", k:"cantaloupe melon"},
-    {n:"Honeydew melon", c:"Fruit", t:"ok", w:"Low residue — thick rind protects the flesh.", k:"melon"},
-    // FRUIT — citrus
-    {n:"Oranges", c:"Fruit", t:"mod", w:"Mid-tier citrus. Peel helps, but wash before zesting.", k:"citrus"},
-    {n:"Mandarins", c:"Fruit", t:"mod", w:"Mid-tier citrus. Buy organic if you use the zest.", k:"citrus tangerine"},
-    {n:"Lemons", c:"Fruit", t:"mod", w:"Fine for juice — but if you use the zest or peel, buy organic. That's where residue sits.", k:"citrus"},
-    {n:"Limes", c:"Fruit", t:"mod", w:"Like lemons — fine for juice, organic if using the zest or peel.", k:"citrus"},
-    {n:"Grapefruit", c:"Fruit", t:"mod", w:"Mid-tier citrus; peel removed for eating.", k:"citrus"},
+    // ---- FRUIT: berries & grapes ----
+    {n:"Strawberries", c:"Fruit", t:"org", w:"Australia's most-sprayed berry — soft, with no skin to peel, and Aussie testing has found residues on conventional ones (even chemicals not approved for strawberries). What's on it is what you eat.", a:"Frozen certified-organic berries are the cheap way to buy organic here."},
+    {n:"Blueberries", c:"Fruit", t:"org", w:"Eaten whole, skin and all, and sprayed often to stop mould on the soft fruit. Nothing gets thrown away, so nothing gets washed off."},
+    {n:"Blackberries", c:"Fruit", t:"org", w:"Delicate, porous and eaten whole — a newer name on the high-residue list. No peel means no protection.", k:"berries"},
+    {n:"Raspberries", c:"Fruit", t:"mod", w:"Soft and hollow, eaten whole — they hold spray more than a firm fruit would. Organic is a fair call if the budget's there.", k:"berries"},
+    {n:"Grapes", c:"Fruit", t:"org", w:"Thin-skinned and sprayed repeatedly against mould, right up to harvest. The residue sits on the skin you eat, and a quick rinse barely touches it."},
+    // ---- FRUIT: stone & pome ----
+    {n:"Peaches", c:"Fruit", t:"org", w:"Thin fuzzy skin you eat whole. Aussie stone fruit is hit hard with sprays for fruit fly and brown rot — and some are systemic, drawn inside the flesh where washing can't reach.", k:"stone fruit"},
+    {n:"Nectarines", c:"Fruit", t:"org", w:"Just a smooth peach — thin skin, eaten whole, no peel to bin. Sprayed intensively here against Queensland fruit fly, and some of that spray ends up inside the fruit. That's why it sits near the top.", k:"stone fruit"},
+    {n:"Cherries", c:"Fruit", t:"org", w:"Small and skin-on, sprayed against fruit fly and rot. You eat the whole surface, so the residue comes along with it.", k:"stone fruit"},
+    {n:"Apricots", c:"Fruit", t:"mod", w:"A skin-on stone fruit like peaches — treat it the same. Organic is sensible if you're eating them fresh and raw.", k:"stone fruit"},
+    {n:"Plums", c:"Fruit", t:"mod", w:"Skin-on stone fruit, mid-range for residue. Give them a good rinse, or go organic.", k:"stone fruit prunes"},
+    {n:"Apples", c:"Fruit", t:"org", w:"Thin skin you eat — plus a catch most people miss: after picking they're often dipped in fungicide and waxed for storage. That coating stays on the bit you bite."},
+    {n:"Pears", c:"Fruit", t:"org", w:"Like apples — thin edible skin, plus post-harvest treatments for storage. Most samples carry more than one residue."},
+    // ---- FRUIT: tropical & melon (peel-you-bin) ----
+    {n:"Bananas", c:"Fruit", t:"ok", w:"The thick peel does the work — you throw away the sprayed part and eat the clean flesh inside. One of the safer conventional buys.", a:"Save your organic budget for skin-on produce. (If you cook with the peel, that's the sprayed bit.)"},
+    {n:"Avocado", c:"Fruit", t:"ok", w:"Among the very cleanest — the thick leathery skin you never eat shields the flesh completely.", k:"avocados avo"},
+    {n:"Pineapple", c:"Fruit", t:"ok", w:"The cleanest fruit tested. That armour-like skin gets binned, and the sweet flesh underneath stays practically residue-free."},
+    {n:"Mango", c:"Fruit", t:"ok", w:"Thick skin peeled and thrown away, taking the spray with it. Conventional is fine."},
+    {n:"Papaya", c:"Fruit", t:"ok", w:"Low residue — you peel and bin the skin. (Some papaya is GM, which is a separate question from pesticides.)", k:"pawpaw"},
+    {n:"Kiwifruit", c:"Fruit", t:"ok", w:"That fuzzy skin gets peeled off, and the residue goes with it. Low-risk either way.", k:"kiwi"},
+    {n:"Watermelon", c:"Fruit", t:"ok", w:"A thick rind and a lot of water inside — very little residue reaches the flesh you eat."},
+    {n:"Rockmelon", c:"Fruit", t:"mod", w:"The rind gets binned, but wash the outside before you cut it — otherwise the knife drags whatever's on the skin straight through the flesh.", k:"cantaloupe melon"},
+    {n:"Honeydew melon", c:"Fruit", t:"ok", w:"Thick rind, low residue — the skin protects the flesh and gets thrown away.", k:"melon"},
+    // ---- FRUIT: citrus (flesh clean, rind treated) ----
+    {n:"Oranges", c:"Fruit", t:"mod", w:"The flesh is well protected — you bin the thick peel and most of the spray with it. The catch: the rind is treated with fungicide and wax after picking, so it matters if you zest.", k:"citrus"},
+    {n:"Mandarins", c:"Fruit", t:"mod", w:"Peel-and-bin fruit, so the flesh stays fairly clean. Buy organic if you use the skin or the zest.", k:"citrus tangerine"},
+    {n:"Lemons", c:"Fruit", t:"mod", w:"Fine for a squeeze of juice. But the skin is where the spray and wax sit — so if you're zesting or using the peel, buy organic or unwaxed.", k:"citrus"},
+    {n:"Limes", c:"Fruit", t:"mod", w:"Same as lemons — the juice is low-risk, the zest and peel are where it matters. Go organic if you use the skin.", k:"citrus"},
+    {n:"Grapefruit", c:"Fruit", t:"mod", w:"Thick peel binned, so the flesh is fairly clean. The rind carries the post-harvest treatments if you use it.", k:"citrus"},
 
-    // LEAFY GREENS
-    {n:"Spinach", c:"Leafy greens", t:"org", w:"EWG's #1 for residue — big leaf surface, eaten raw, holds a lot of spray.", k:"greens baby spinach"},
-    {n:"Kale", c:"Leafy greens", t:"org", w:"Dirty Dozen — some samples carry a pesticide possibly linked to cancer.", k:"greens"},
-    {n:"Silverbeet", c:"Leafy greens", t:"org", w:"Same family as kale — leafy, high surface area. Organic recommended.", k:"chard swiss greens"},
-    {n:"Rocket", c:"Leafy greens", t:"mod", w:"Tender leaf eaten raw — treat like other salad greens; organic is sensible.", k:"arugula greens salad"},
-    {n:"Bok choy", c:"Leafy greens", t:"mod", w:"Leafy and barely cooked — organic is a fair call.", k:"asian greens pak choy"},
-    {n:"Lettuce", c:"Leafy greens", t:"mod", w:"Leafy and eaten raw — mid-tier. Wash thoroughly or buy organic.", k:"salad greens cos iceberg"},
+    // ---- LEAFY GREENS (Western) ----
+    {n:"Spinach", c:"Leafy greens", t:"org", w:"Tops the residue list worldwide. Big soft leaves give spray a huge surface to land on, it's eaten raw, and some of it is taken up inside the leaf — so washing only does so much.", k:"greens baby spinach"},
+    {n:"Kale", c:"Leafy greens", t:"org", w:"A Dirty Dozen regular — leafy, sprayed often, and eaten raw or barely cooked. Some samples carry a pesticide linked to cancer.", k:"greens"},
+    {n:"Silverbeet", c:"Leafy greens", t:"org", w:"Same story as spinach and kale — big leaves, lots of surface, lightly cooked. Organic is the safer pick.", k:"chard swiss greens"},
+    {n:"Rocket", c:"Leafy greens", t:"mod", w:"A tender salad leaf eaten raw. Treat it like other greens — organic is sensible if it's a staple for you.", k:"arugula greens salad"},
+    {n:"Lettuce", c:"Leafy greens", t:"mod", w:"Leafy and eaten raw, so there's no cooking or peeling to cut the residue. Wash it well, or buy organic.", k:"salad greens cos iceberg"},
+    // ---- LEAFY GREENS (Asian) ----
+    {n:"Bok choy", c:"Leafy greens", t:"org", w:"An Asian leafy green — and leafy greens are the most-sprayed things in the aisle. Thin leaves, quick-growing, eaten lightly cooked. Named a high-residue veg in testing.", k:"pak choy asian greens", asian:1},
+    {n:"Gai lan", c:"Leafy greens", t:"org", w:"Chinese broccoli — but really a leafy green, and sprayed like one. Eaten with a quick steam, so the residue stays. Organic worth it.", k:"chinese broccoli kai lan", asian:1},
+    {n:"Choy sum", c:"Leafy greens", t:"org", w:"A leafy Asian green with tender stems and flowers, eaten barely cooked. Same high-residue group as bok choy — organic is the pick.", k:"choi sum flowering cabbage", asian:1},
+    {n:"Water spinach", c:"Leafy greens", t:"org", w:"Kangkong — a fast-growing leafy green under heavy pest pressure, eaten lightly cooked. Leafy and sprayed, so organic is worth it.", a:"Some Aussie states restrict growing or selling it — you'll mostly find it at Asian grocers.", k:"kangkong ong choy morning glory", asian:1},
+    {n:"Garlic chives", c:"Leafy greens", t:"org", w:"Flagged by name in residue studies alongside bok choy and coriander — thin leaves, eaten raw or barely cooked. Buy organic if you use them a lot.", k:"chinese chives gow choy", asian:1},
+    {n:"Gai choy", c:"Leafy greens", t:"org", w:"Chinese mustard greens — and mustard greens sit right near the top of the residue list. Leafy, thin, heavily sprayed.", k:"mustard greens chinese mustard", asian:1},
+    {n:"Coriander", c:"Leafy greens", t:"org", w:"One to watch — testing puts its residue right up with spinach and kale, including chemicals not approved for it. A soft leaf eaten raw, so washing won't fix it.", k:"cilantro", asian:1},
+    {n:"Thai basil", c:"Leafy greens", t:"org", w:"A soft herb eaten raw, in the same high-residue group as coriander. If you use it fresh and often, organic is the safer pick.", k:"basil herbs", asian:1},
+    {n:"Mint", c:"Leafy greens", t:"mod", w:"A soft leaf eaten raw with no skin to protect it — treat it like other fresh herbs. Organic is a fair call for something you never cook.", k:"herbs", asian:1},
 
-    // VEGETABLES
-    {n:"Capsicum", c:"Vegetables", t:"org", w:"EWG flags peppers as high-residue — just outside the top 12. Often eaten raw.", k:"bell pepper capsicums"},
-    {n:"Chilli", c:"Vegetables", t:"org", w:"Same as capsicum — high residues flagged by EWG.", k:"hot pepper chili chillies"},
-    {n:"Celery", c:"Vegetables", t:"mod", w:"Once one of the worst; now mid-tier. Stringy, no peel — organic is a fair call."},
-    {n:"Green beans", c:"Vegetables", t:"mod", w:"Just below the Dirty Dozen cut-off — some older-chemical residues. Eaten whole.", k:"beans"},
-    {n:"Tomatoes", c:"Vegetables", t:"mod", w:"Mid-tier, thin-skinned, eaten raw. Rinse well or buy organic."},
-    {n:"Cherry tomatoes", c:"Vegetables", t:"mod", w:"Like tomatoes — thin skin, eaten whole and raw.", k:"grape tomato"},
-    {n:"Cucumber", c:"Vegetables", t:"mod", w:"Mid-tier; skin-on unless peeled. Rinse well, or peel conventional ones.", k:"cucumbers lebanese"},
-    {n:"Zucchini", c:"Vegetables", t:"mod", w:"Mid-tier; skin-on. Reasonable to buy organic.", k:"courgette squash"},
-    {n:"Eggplant", c:"Vegetables", t:"mod", w:"Mid-tier; thick skin helps a little.", k:"aubergine"},
-    {n:"Broccoli", c:"Vegetables", t:"ok", w:"Low-residue end of the scale — conventional is fine.", k:"broccolini"},
-    {n:"Cauliflower", c:"Vegetables", t:"ok", w:"Clean Fifteen range — low residues."},
-    {n:"Cabbage", c:"Vegetables", t:"ok", w:"Clean Fifteen — outer leaves are removed; low residues."},
-    {n:"Brussels sprouts", c:"Vegetables", t:"ok", w:"Generally low-residue — conventional is usually fine.", k:"sprouts"},
-    {n:"Asparagus", c:"Vegetables", t:"ok", w:"Clean Fifteen — rarely heavily treated."},
-    {n:"Snow peas", c:"Vegetables", t:"mod", w:"Eaten whole, pod and all — mid-tier; organic is reasonable.", k:"sugar snap peas"},
-    {n:"Sweet corn", c:"Vegetables", t:"ok", w:"Clean Fifteen — husk protects the kernels. (Much corn is GM — a separate issue.)", k:"corn"},
-    {n:"Mushrooms", c:"Vegetables", t:"ok", w:"Clean Fifteen — low residues.", k:"mushroom button"},
-    // VEGETABLES — roots & alliums
-    {n:"Potatoes", c:"Vegetables", t:"org", w:"New to the Dirty Dozen — often sprayed with a sprout-inhibitor; skin-on when roasted.", a:"Organic skips the post-harvest anti-sprouting spray. Root veg is a cheap, easy swap to organic.", k:"potato spuds"},
-    {n:"Sweet potato", c:"Vegetables", t:"ok", w:"Low residue — conventional is fine.", k:"kumara"},
-    {n:"Carrots", c:"Vegetables", t:"ok", w:"Clean Fifteen — low residue (they take up a little from soil, but well within range)."},
-    {n:"Onions", c:"Vegetables", t:"ok", w:"Clean Fifteen — papery skin removed; very low residue.", k:"onion brown red"},
-    {n:"Garlic", c:"Vegetables", t:"ok", w:"Protected by its skin and low-risk — conventional is fine."},
-    {n:"Ginger", c:"Vegetables", t:"ok", w:"Low-risk root — conventional is generally fine (peel it)."},
-    {n:"Beetroot", c:"Vegetables", t:"ok", w:"Root veg, peeled or scrubbed — low-risk.", k:"beets beet"},
-    {n:"Pumpkin", c:"Vegetables", t:"ok", w:"Thick skin discarded; low residue.", k:"butternut squash"},
+    // ---- VEGETABLES (thin-skin / eaten raw) ----
+    {n:"Capsicum", c:"Vegetables", t:"org", w:"Flagged as high-residue by testers — smooth thin skin, eaten raw, and hit with a lot of spray for sap-sucking pests. You eat the whole surface.", k:"bell pepper capsicums"},
+    {n:"Chilli", c:"Vegetables", t:"org", w:"Same as capsicum — thin-skinned, heavily sprayed, eaten whole. Worth buying organic if you get through a lot.", k:"hot pepper chili chillies", asian:1},
+    {n:"Celery", c:"Vegetables", t:"mod", w:"Once one of the worst offenders, now mid-range. Those ridged stalks trap spray in the grooves and there's no skin to peel — a fair one to buy organic."},
+    {n:"Green beans", c:"Vegetables", t:"mod", w:"The whole pod is eaten, skin and all, and it sits just below the high-residue group. Rinse well or go organic.", k:"beans"},
+    {n:"Tomatoes", c:"Vegetables", t:"mod", w:"Thin skin, eaten raw, mid-range for residue. A proper wash helps; organic helps more."},
+    {n:"Cherry tomatoes", c:"Vegetables", t:"mod", w:"Little tomatoes eaten whole and raw — same mid-range residue, no skin to remove.", k:"grape tomato"},
+    {n:"Cucumber", c:"Vegetables", t:"mod", w:"Skin-on unless you peel it, and often waxed for shelf life. Peel the conventional ones, or buy organic and keep the skin.", k:"cucumbers lebanese"},
+    {n:"Zucchini", c:"Vegetables", t:"mod", w:"Thin skin eaten whole, sometimes waxed. Mid-range — reasonable to buy organic.", k:"courgette squash"},
+    {n:"Eggplant", c:"Vegetables", t:"mod", w:"The glossy skin gives a little protection, but it's eaten and sits mid-range. Your call.", k:"aubergine"},
+    {n:"Chinese eggplant", c:"Vegetables", t:"mod", w:"The long purple eggplant — its skin gives some protection, so it sits mid-range like regular eggplant. Your call.", k:"long eggplant asian eggplant", asian:1},
+    {n:"Snake beans", c:"Vegetables", t:"mod", w:"Long beans, eaten whole like green beans — no peel, so mid-range for residue. Rinse well or go organic.", k:"long beans yard long", asian:1},
+    {n:"Snow peas", c:"Vegetables", t:"mod", w:"Eaten whole, pod and all, so there's no peel to lose the residue with. Mid-range — organic is reasonable.", k:"sugar snap peas", asian:1},
+    // ---- VEGETABLES (lower residue) ----
+    {n:"Broccoli", c:"Vegetables", t:"ok", w:"Lower-residue end — tougher florets, some natural pest resistance, and less spray than leafy greens. Conventional is fine.", k:"broccolini"},
+    {n:"Cauliflower", c:"Vegetables", t:"ok", w:"Low residue — the head is fairly protected and it's usually cooked. Buy the regular one."},
+    {n:"Cabbage", c:"Vegetables", t:"ok", w:"You peel off and bin the outer leaves — and the spray with them. Low residue underneath."},
+    {n:"Wombok", c:"Vegetables", t:"mod", w:"Chinese (napa) cabbage — denser and more layered than loose Asian greens, so the outer leaves take the spray and get binned. Middle of the pack.", k:"napa chinese cabbage", asian:1},
+    {n:"Brussels sprouts", c:"Vegetables", t:"ok", w:"Tight, layered little heads with tough outer leaves — generally low residue. Conventional is fine.", k:"sprouts"},
+    {n:"Asparagus", c:"Vegetables", t:"ok", w:"Rarely needs heavy spraying and grows fast — one of the cleaner vegetables. Buy the regular one."},
+    {n:"Sweet corn", c:"Vegetables", t:"ok", w:"The husk you peel back protects the kernels — low residue. (Lots of corn is GM, a separate issue from spray.)", k:"corn"},
+    {n:"Edamame", c:"Vegetables", t:"mod", w:"Young soybeans in the pod — the pod gives some protection and residue data is mixed, so it's a your-call. (Most soy is GM, a separate issue.)", k:"soybeans soy beans", asian:1},
+    // ---- VEGETABLES: mushrooms ----
+    {n:"Mushrooms", c:"Vegetables", t:"ok", w:"Grown in controlled beds, not sprayed in a field — consistently low residue. Conventional is fine.", k:"mushroom button"},
+    {n:"Shiitake mushrooms", c:"Vegetables", t:"ok", w:"Grown on logs or substrate, not field-sprayed — low residue like other mushrooms. Conventional is fine.", k:"mushroom asian", asian:1},
+    {n:"Enoki mushrooms", c:"Vegetables", t:"ok", w:"Low pesticide risk — grown in controlled conditions. One note: enoki has had Listeria recalls overseas, so keep them cold and cook them.", k:"mushroom enokitake", asian:1},
+    {n:"Bean sprouts", c:"Vegetables", t:"ok", w:"On pesticides, low-risk — they're grown in water and trays, not sprayed in a field. The real issue is bacteria: sprouts have caused Salmonella recalls in Australia.", a:"Buy them fresh, keep them cold, cook them, and skip raw sprouts if pregnant. Check for recalls.", k:"mung bean sprouts", asian:1},
+    // ---- VEGETABLES: roots & alliums ----
+    {n:"Potatoes", c:"Vegetables", t:"org", w:"Newly on the high-residue list. The catch is after harvest — they're commonly treated with an anti-sprouting chemical in storage, and you eat the skin when you roast them.", a:"Organic skips the storage sprout-spray. Root veg is a cheap, easy swap to organic.", k:"potato spuds"},
+    {n:"Sweet potato", c:"Vegetables", t:"ok", w:"Low residue — a tough skin, and it's always cooked. Conventional is fine.", k:"kumara"},
+    {n:"Carrots", c:"Vegetables", t:"ok", w:"Mostly low, with one quirk — carrots draw a little residue up from the soil into the root, so peeling doesn't remove all of it. Still well within the safe range; buy the regular ones."},
+    {n:"Daikon", c:"Vegetables", t:"ok", w:"A big white radish you peel before eating — low residue. Conventional is fine.", k:"white radish mooli", asian:1},
+    {n:"Onions", c:"Vegetables", t:"ok", w:"The papery outer layers get peeled and binned, taking the spray with them. Very low residue.", k:"onion brown red"},
+    {n:"Spring onions", c:"Vegetables", t:"mod", w:"Eaten whole, green tops and all — and unlike a brown onion there's no papery layer to peel away. Not top-tier, but the no-peel factor nudges it up.", k:"scallions shallots green onion", asian:1},
+    {n:"Garlic", c:"Vegetables", t:"ok", w:"Protected by its skin and not heavily sprayed — low-risk. Conventional is fine."},
+    {n:"Ginger", c:"Vegetables", t:"ok", w:"A knobbly root you peel before using — most of Australia's is Queensland-grown. Low-risk; buy the regular one.", asian:1},
+    {n:"Galangal", c:"Vegetables", t:"ok", w:"A ginger-like root you peel before use, mostly grown in Queensland. Low-risk fresh — if it's the imported frozen kind, treat it as a your-call.", k:"galanga blue ginger", asian:1},
+    {n:"Lemongrass", c:"Vegetables", t:"ok", w:"You peel off and bin the tough outer layers before using the tender core — and most of Australia's is Queensland-grown. Low-risk.", k:"lemon grass", asian:1},
+    {n:"Lotus root", c:"Vegetables", t:"ok", w:"A root you peel and cook, so it's low-risk. Often sold frozen and imported — if so, treat it as a your-call.", k:"renkon", asian:1},
+    {n:"Beetroot", c:"Vegetables", t:"ok", w:"A root veg you scrub or peel — low residue. Conventional is fine.", k:"beets beet"},
+    {n:"Pumpkin", c:"Vegetables", t:"ok", w:"The thick skin is binned and it's always cooked — low residue. Buy the regular one.", k:"butternut squash"},
 
-    // DAIRY & EGGS
-    {n:"Milk", c:"Dairy & eggs", t:"org", w:"Worth it — organic bans routine antibiotics and pesticide-treated feed. (Growth hormones are already banned in Aussie dairy.)", a:"If buying any organic dairy, milk is the one to prioritise."},
-    {n:"Butter", c:"Dairy & eggs", t:"org", w:"Fat concentrates any feed residues — the pick if you're buying organic dairy."},
-    {n:"Cheese", c:"Dairy & eggs", t:"mod", w:"Same logic as milk — organic avoids feed-based residues. Worth it if budget allows."},
-    {n:"Yoghurt", c:"Dairy & eggs", t:"mod", w:"Follows the milk you'd choose — organic if you're going organic on dairy.", k:"yogurt"},
-    {n:"Eggs", c:"Dairy & eggs", t:"mod", w:"Benefit is pesticide-free feed — real but modest.", a:"'Free range' claims vary a lot — certified organic or a trusted brand is the reliable pick."},
+    // ---- DAIRY & EGGS ----
+    {n:"Milk", c:"Dairy & eggs", t:"org", w:"Worth it — organic dairy means no routine antibiotics and no pesticide-treated feed passing through. (Growth hormones like rBST are already banned in Aussie dairy.)", a:"If you buy one thing organic in the fridge, make it the milk."},
+    {n:"Butter", c:"Dairy & eggs", t:"org", w:"Fat concentrates whatever's in the feed, so organic butter is the pick if you're going organic on dairy."},
+    {n:"Cheese", c:"Dairy & eggs", t:"mod", w:"Same idea as milk — organic avoids feed-based residues. A worth-it-if-the-budget-allows."},
+    {n:"Yoghurt", c:"Dairy & eggs", t:"mod", w:"Follows whatever milk you'd choose — organic if you're buying organic dairy.", k:"yogurt"},
+    {n:"Eggs", c:"Dairy & eggs", t:"mod", w:"The benefit is the hens' feed being pesticide-free — real, but small. Certified organic is the reliable label; free-range claims vary a lot."},
 
-    // MEAT
-    {n:"Chicken", c:"Meat", t:"mod", w:"Myth-buster: added hormones in chicken are BANNED in Australia. Organic is about feed and no routine antibiotics — not hormones.", k:"poultry"},
-    {n:"Beef", c:"Meat", t:"org", w:"Real benefit — ~40% of Aussie cattle get hormone growth promotants (HGPs). Organic bans them plus routine antibiotics.", a:"Look for certified organic, or 'grass-fed & HGP-free'.", k:"steak mince"},
-    {n:"Lamb", c:"Meat", t:"ok", w:"Australian lamb is largely pasture-raised with low chemical use — conventional is generally fine."},
-    {n:"Pork", c:"Meat", t:"mod", w:"Organic bans routine antibiotics and some feed additives — a modest benefit.", k:"bacon"},
+    // ---- MEAT ----
+    {n:"Chicken", c:"Meat", t:"mod", w:"Myth-buster: added hormones in chicken are banned in Australia — hormone-free is marketing on a non-issue. Organic is really about feed and no routine antibiotics.", k:"poultry"},
+    {n:"Beef", c:"Meat", t:"org", w:"A real difference here — around 40% of Aussie cattle get hormone growth promotants. Organic (or HGP-free) bans those plus routine antibiotics.", a:"Look for certified organic, or grass-fed and HGP-free.", k:"steak mince"},
+    {n:"Lamb", c:"Meat", t:"ok", w:"Aussie lamb is mostly pasture-raised with low chemical use — conventional is generally fine."},
+    {n:"Pork", c:"Meat", t:"mod", w:"Organic bans routine antibiotics and some feed additives — a modest step up.", k:"bacon"},
 
-    // PANTRY
-    {n:"Oats", c:"Pantry", t:"org", w:"Strong case — glyphosate (Roundup) is used to dry grain before harvest, so it lands on what you eat. Organic avoids it.", k:"oat porridge rolled"},
-    {n:"Bread & flour", c:"Pantry", t:"org", w:"Same glyphosate dry-down issue as oats — organic wheat skips the pre-harvest spray.", k:"wheat flour bread"},
-    {n:"Dried beans & lentils", c:"Pantry", t:"org", w:"Legumes are often glyphosate-dried pre-harvest — organic meaningfully lowers residues.", k:"legumes chickpeas kidney"},
-    {n:"Chickpeas & hummus", c:"Pantry", t:"org", w:"EWG found glyphosate in most conventional chickpea/hummus samples — organic is worth it.", k:"hommus canned"},
-    {n:"Rice", c:"Pantry", t:"mod", w:"Can carry residues and soil contaminants — organic is a reasonable upgrade."},
-    {n:"Baby food", c:"Pantry", t:"org", w:"The strongest precautionary case — infants are more vulnerable, and organic baby food tests residue-free far more often.", a:"If you buy organic anything, make it the baby's food.", k:"puree infant"},
-    {n:"Honey", c:"Pantry", t:"ok", w:"Skip the premium — pesticide drift reaches 'organic' honey too, so the label guarantees little. Buy on taste or local."},
+    // ---- PANTRY ----
+    {n:"Oats", c:"Pantry", t:"org", w:"A strong case — glyphosate (Roundup) is sprayed on grain to dry it out just before harvest, so it lands on the oats you actually eat. Organic skips that step.", k:"oat porridge rolled"},
+    {n:"Bread & flour", c:"Pantry", t:"org", w:"Same pre-harvest glyphosate spray as oats. Organic wheat avoids the drying-off spray that ends up in the flour.", k:"wheat flour bread"},
+    {n:"Dried beans & lentils", c:"Pantry", t:"org", w:"Legumes are often sprayed with glyphosate to dry them before harvest — organic meaningfully lowers what's left.", k:"legumes chickpeas kidney"},
+    {n:"Chickpeas & hummus", c:"Pantry", t:"org", w:"Testing has found glyphosate in most conventional chickpeas and hummus. Organic is worth it here.", k:"hommus canned"},
+    {n:"Rice", c:"Pantry", t:"mod", w:"Can carry residues and soil contaminants — organic is a reasonable upgrade if it's a staple."},
+    {n:"Tofu", c:"Pantry", t:"ok", w:"Tofu itself isn't sprayed — any pesticide question is about the soybeans upstream, and there's no sign of high residue in the finished product. (Most soy is GM, a separate issue.)", k:"bean curd soy", asian:1},
+    {n:"Baby food", c:"Pantry", t:"org", w:"The strongest precautionary case — little bodies are more vulnerable, and organic baby food tests clean far more often.", a:"Worth prioritising over almost anything else on this list.", k:"puree infant"},
+    {n:"Honey", c:"Pantry", t:"ok", w:"Skip the premium — bees roam far and wide, so pesticide drift reaches organic honey too. The label guarantees little. Buy on taste, or buy local."},
 
-    // DRINKS
-    {n:"Coffee", c:"Drinks", t:"ok", w:"Roasting destroys almost all residue, so conventional is fine for your cup. (Organic mainly helps farm workers & the land.)", k:"beans espresso"},
-    {n:"Tea", c:"Drinks", t:"mod", w:"Organic tea tends to test lower for residues — a modest, real benefit."},
-    {n:"Wine", c:"Drinks", t:"mod", w:"Mostly about sulfites, not pesticides — organic caps added sulfites lower. Health case is modest."}
+    // ---- DRINKS ----
+    {n:"Coffee", c:"Drinks", t:"ok", w:"Roasting burns off almost all pesticide residue, so your cup is low-risk either way. (Organic mainly helps farm workers and the land — a good reason, just not a residue one.)", k:"beans espresso"},
+    {n:"Tea", c:"Drinks", t:"mod", w:"Organic tea does test lower for residues, and the leaves steep straight into your cup — a modest but real benefit."},
+    {n:"Wine", c:"Drinks", t:"mod", w:"More about sulfites than pesticides — organic wine caps added sulfites lower. The pesticide case is modest."}
   ];
 
-  var CATS = ["Fruit","Vegetables","Leafy greens","Dairy & eggs","Meat","Pantry","Drinks"];
+  var CATS = ["Fruit","Vegetables","Leafy greens","Asian","Dairy & eggs","Meat","Pantry","Drinks"];
 
   // ---- State + storage ----
   var LS_ENTRIES="cleancart.entries.v1", LS_LISTID="cleancart.listid.v1";
@@ -556,7 +586,7 @@
   // ---- Filtering ----
   function match(item){
     if(fVerd!=="all" && item.t!==fVerd) return false;
-    if(fCat!=="all" && item.c!==fCat) return false;
+    if(fCat!=="all"){ if(fCat==="Asian"){ if(!item.asian) return false; } else if(item.c!==fCat) return false; }
     if(q){
       var hay=(item.n+" "+(item.k||"")+" "+item.c).toLowerCase();
       if(hay.indexOf(q)===-1) return false;
