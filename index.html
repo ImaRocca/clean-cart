@@ -730,7 +730,7 @@
   }
   function setStatus(s){ syncStatus=s; paintSyncUI(); }
   function reflectChange(){
-    persist(); updateBadge();
+    rebuildSets(); persist(); updateBadge();
     if(view==="list"){ renderList(); }
     else { var sy=window.scrollY; render(); window.scrollTo(0,sy); }
   }
@@ -746,7 +746,7 @@
     fetch(blobUrl(),{headers:{"Accept":"application/json"},cache:"no-store"})
       .then(function(res){ return res.ok?res.json():{entries:{}}; })
       .then(function(data){
-        mergeRemote((data&&data.entries)||{}); persist();
+        if(mergeRemote((data&&data.entries)||{})) reflectChange(); else persist();
         return fetch(blobUrl(),{method:"PUT",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({entries:entries,updated:now()})});
       })
       .then(function(res){ if(!res.ok) throw new Error("put"); setStatus("synced"); })
@@ -900,6 +900,7 @@
   updateBadge();
   render();
   startSync();
+  document.addEventListener("visibilitychange", function(){ if(!document.hidden && shared) pull(); });
 })();
 </script>
 </body>
